@@ -1,5 +1,5 @@
 
-% gleiches gaussches rauschen auf datensatz 
+% unterschiedliches gaussches rauschen auf ein Bild 
 % dann pca 
 
 %% init
@@ -15,21 +15,17 @@ imds = imageDatastore("data\images\");
 
 % create dataMatrix
 
+imgOrig = readimage(imds,1);
+
 dataMatrixOrig = [];
 dataMatrixNoise = [];
 nImg = 100;
 
 for img = 1:nImg
-    imgOrig = readimage(imds,img);
 
-    try 
-        dataMatrixOrig(img,:) = imgOrig(:);
-    catch 
-         imgOrig = rgb2gray(imgOrig);
-         dataMatrixOrig(img,:) = imgOrig(:);
-    end
+    varGauss = 0.02 * rand;
 
-    imgNoise = imnoise(imgOrig,'gaussian', 0.1);    
+    imgNoise = imnoise(imgOrig,'gaussian', varGauss);    
     dataMatrixNoise(img,:) = imgNoise(:);
 end
 
@@ -39,7 +35,7 @@ sizeImage = size(imgOrig);
 
 [coeff, score, ~, ~, explained, mu] = pca(dataMatrixNoise);
 
-threshold = 80; 
+threshold = 5; 
 cumulativeExplained = cumsum(explained);
 nComponents = find(cumulativeExplained >= threshold, 1);
 
@@ -51,9 +47,7 @@ dataMatrixRecons = pcaMatrix * coeff(:, 1:nComponents)' + mu;
 close all
 
 idxRandImg = randi(nImg);
-idxRandImg = 1;
 
-imgOrig = uint8(reshape(dataMatrixOrig(idxRandImg,:), sizeImage));
 figure
 imshow(imgOrig)
 
