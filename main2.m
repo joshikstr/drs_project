@@ -58,3 +58,11 @@ imshow(imgNoise)
 imgRecons = uint8(reshape(dataMatrixRecons(idxRandImg,:), sizeImage));
 figure
 imshow(imgRecons)
+
+
+%Korrelation Ursprungsbild und PCA
+
+% Berechnung der Korrelation zwischen den beiden rekonstruierten Bildern
+correlation = corr2(imgOrig, imgRecons);
+
+fprintf('Die Korrelation zwischen den beiden optimierten Bildern beträgt: %.4f\n', correlation);
