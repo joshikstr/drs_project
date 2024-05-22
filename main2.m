@@ -17,12 +17,12 @@ imds = imageDatastore("data\images\");
 
 imgOrig = readimage(imds,1);
 
-dataMatrixOrig = [];
+% imgOrig = imnoise(imgOrig, 'gaussian', 0.001);
+
 dataMatrixNoise = [];
-nImg = 100;
+nImg = 50;
 
 for img = 1:nImg
-
     varGauss = 0.02 * rand;
 
     imgNoise = imnoise(imgOrig,'gaussian', varGauss);    
