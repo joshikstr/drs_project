@@ -17,8 +17,22 @@ imds = imageDatastore("data\images\");
 
 imgOrig = readimage(imds,1);
 
-imgOrig = imnoise(imgOrig, 'gaussian', 0.001);
 
+%Hälfte des Bildes verrauschen 
+    image_double = im2double(imgOrig); 
+    [rows, cols, channels] = size(image_double); 
+
+    %nur die linke Hälfte verrauschen 
+    left_half = image_double(:, 1:floor(cols/2), :); 
+    varGauss = 0.02 * rand;
+    noisy_left_half = imnoise(left_half, 'gaussian', varGauss);
+
+    %rechte Hälfte unverändert lassen 
+    right_half = image_double(:, floor(cols/2)+1:end, :); 
+
+    %Beiden Hälften wieder zusammenführen 
+    imgOrig = [noisy_left_half right_half];    
+    imgOrig = im2uint8(imgOrig); 
   
 
 %% Beginn Algorithmus 
