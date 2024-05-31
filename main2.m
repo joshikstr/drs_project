@@ -86,7 +86,7 @@ fprintf('SNR original Image zu noise Image:  %0.4f \n\n', snr);
 
 %Rausch Index PCR-Bild zu Noise Bild
 [peaksnr, snr] = psnr(imgRecons, imgNoise); 
-fprintf('Peak-SNR original Image zu noise Image:  %0.4f \n', peaksnr);
+fprintf('Peak-SNR PCA Image zu noise Image:  %0.4f \n', peaksnr);
 fprintf('SNR original Image zu noise Image:  %0.4f \n\n', snr);
 
 
