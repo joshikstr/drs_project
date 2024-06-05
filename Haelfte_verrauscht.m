@@ -87,17 +87,3 @@ correlation = corr2(imgOrig, imgRecons);
 fprintf('Die Korrelation zwischen dem Oridinalbild und dem PCR-Bild beträgt: %.4f\n\n', correlation);
 
 
-%% Rausch Index
-
-% -> PSNR ist spezifisch für Bilder und Videos und vergleicht die Qualität eines rekonstruierten Bildes mit dem Originalbild durch das Verhältnis von maximaler Signalstärke zur mittleren quadratischen Abweichung.
-
-%-> Ein höherer PSNR-Wert deutet auf eine höhere Qualität der rekonstruierten oder komprimierten Bilddaten hin, da der Fehler (Rauschen) im Vergleich zum Signal kleiner ist.
-
-%Rausch Index Original Bild zu Noise Bild
-peaksnr = psnr(imgOrig, imgNoise); 
-fprintf('Peak-SNR original Image zu noise Image:  %0.4f dB\n', peaksnr);
-
-%Rausch Index PCR-Bild zu Noise Bild
-peaksnr = psnr(imgRecons, imgNoise); 
-fprintf('Peak-SNR PCA Image zu noise Image:  %0.4f dB\n', peaksnr);
-

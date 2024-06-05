@@ -95,28 +95,3 @@ correlation = corr2(imgOrig, imgRecons_inv);
 
 fprintf('Die Korrelation zwischen den beiden optimierten Bildern (invertiert) beträgt: %.4f\n\n', correlation);
 
-
-%Rausch Index
-% -> SNR misst die Qualität eines Signals im Allgemeinen, indem es das Verhältnis von Signalstärke zu Rauschstärke angibt.
-% -> PSNR ist spezifisch für Bilder und Videos und vergleicht die Qualität eines rekonstruierten Bildes mit dem Originalbild durch das Verhältnis von maximaler Signalstärke zur mittleren quadratischen Abweichung.
-
-%-> Ein höherer PSNR-Wert deutet auf eine höhere Qualität der rekonstruierten oder komprimierten Bilddaten hin, da der Fehler (Rauschen) im Vergleich zum Signal kleiner ist.
-
-%Rausch Index Original Bild zu Noise Bild
-[peaksnr, snr] = psnr(imgOrig, imgNoise); 
-fprintf('Peak-SNR original Image zu noise Image:  %0.4f \n', peaksnr);
-fprintf('SNR original Image zu noise Image:  %0.4f \n\n', snr);
-
-%Rausch Index ICA-Bild zu Noise Bild
-[peaksnr, snr] = psnr(imgRecons, imgNoise); 
-fprintf('Peak-SNR ICA Image zu noise Image:  %0.4f \n', peaksnr);
-fprintf('SNR ICA Image zu noise Image:  %0.4f \n\n', snr);
-
-
-%% invertiertes Bild
-
-%Rausch Index PCR-Bild zu Noise Bild
-[peaksnr, snr] = psnr(imgRecons_inv, imgNoise); 
-fprintf('Peak-SNR ICA Image (invertiert) zu noise Image:  %0.4f \n', peaksnr);
-fprintf(['SNR ICA Image (invertiert) zu noise Image:  %0.4f \n\n'], snr);
-
