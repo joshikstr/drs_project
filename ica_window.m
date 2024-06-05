@@ -13,6 +13,7 @@ imds = imageDatastore("data\images\");
 %% create dataset of images
 
 imgOrig = readimage(imds,1);
+imgOrig1 = imgOrig; 
 sizeImageOrig = size(imgOrig);
 % adding noise to input image
 imgOrig = imnoise(imgOrig, 'gaussian', 0.001);
@@ -114,11 +115,11 @@ imshow(imgRecons_inv)
 % %% Korrelation Ursprungsbild und ICA
 % 
 % % Berechnung der Korrelation zwischen den beiden rekonstruierten Bildern
-correlation = corr2(imgOrig, imgRecons);
+correlation = corr2(imgOrig1, imgRecons);
 
 fprintf('Die Korrelation zwischen den beiden optimierten Bildern beträgt: %.4f\n\n', correlation);
 
-correlation = corr2(imgOrig, imgRecons_inv);
+correlation = corr2(imgOrig1, imgRecons_inv);
 
 fprintf('Die Korrelation zwischen den beiden optimierten Bildern (invertiert) beträgt: %.4f\n\n', correlation);
 

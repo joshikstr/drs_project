@@ -15,7 +15,8 @@ imds = imageDatastore("data\images\");
 
 % create dataMatrix
 
-imgOrig = readimage(imds,1);
+imgOrig1= readimage(imds,1);
+imgOrig = imgOrig1; 
 
 
 %Hälfte des Bildes verrauschen 
@@ -82,7 +83,7 @@ imshow(imgRecons)
 %% Korrelation Ursprungsbild und PCA
 
 % Berechnung der Korrelation zwischen den beiden rekonstruierten Bildern
-correlation = corr2(imgOrig, imgRecons);
+correlation = corr2(imgOrig1, imgRecons);
 
 fprintf('Die Korrelation zwischen dem Oridinalbild und dem PCR-Bild beträgt: %.4f\n\n', correlation);
 

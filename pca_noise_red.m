@@ -17,6 +17,7 @@ imds = imageDatastore("data\images\");
 % create dataMatrix
 
 imgOrig = readimage(imds,1);
+imgOrig1 = imgOrig; 
 figure
 imshow(imgOrig)
 title("original image")
@@ -86,7 +87,7 @@ title("reconstructed image after pca")
 %% Korrelation Ursprungsbild und PCA
 
 % Berechnung der Korrelation zwischen den beiden rekonstruierten Bildern
-correlation = corr2(imgOrig, imgRecons);
+correlation = corr2(imgOrig1, imgRecons);
 
 fprintf('Die Korrelation zwischen den beiden optimierten Bildern beträgt: %.4f\n\n', correlation);
 

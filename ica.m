@@ -16,10 +16,10 @@ imds = imageDatastore("data\images\");
 
 % create dataMatrix
 
-imgOrig = readimage(imds,1);
+imgOrig1 = readimage(imds,1);
 
 % adding noise to input image
-imgOrig = imnoise(imgOrig, 'gaussian', 0.001);
+imgOrig = imnoise(imgOrig1, 'gaussian', 0.001);
 
 
 %% start of the alorithm
