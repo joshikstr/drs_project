@@ -10,12 +10,12 @@ close all
 addpath data\
 addpath functions\
 
-imds = imageDatastore("data\images\");
+imds = imageDatastore("data\images_homogen\");
 
 %% bsp small dataset image 
 
 % create dataMatrix
-images = 20;
+images = 12;
 dataMatrixNoise = [];
 nImg = 5;
 img_idx = 1;
@@ -100,7 +100,7 @@ title("reconstructed image after pca")
 
 %% new image
 
-img2 = readimage(imds,16);
+img2 = readimage(imds,12);
 figure
 imshow(img2)
 title("second image")
