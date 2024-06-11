@@ -1,6 +1,7 @@
+% ICA wird auf ein Bild angewandt, das verschieden verrauscht ist
+% -> Ergebnischannels sind das Bild (evtl. invertiert) und mehrere verschieden verrauschte Channels
+% -> Quellrauschen ist entfernbar, aber kein Sensorrauschen
 
-% unterschiedliches gaussches rauschen auf ein Bild 
-% dann ica 
 
 %% init
 clear 
