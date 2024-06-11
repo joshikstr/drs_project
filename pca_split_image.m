@@ -1,6 +1,6 @@
-
-% unterschiedliches gaussches rauschen auf ein Bild 
-% dann pca 
+% ein Bild wird in vier Teile geteilt
+% auf diese Teilbilder wird die PCA angewandt
+% -> Bilder vermischen sich
 
 %% init
 clear 
