@@ -1,6 +1,6 @@
+% PCA-Modell erstellen: coeff und mu von Thorax berechnen 
+% -> damit auf ein einzelnes Bild Rueckschluesse ziehen
 
-% PCA-Modell erstellen: coeff und mu von Thorax berechnen und damit auf ein
-% einzelnes Bild Rückschlüsse ziehen
 
 %% init
 clear 
