@@ -1,6 +1,6 @@
-
-% unterschiedliches gaussches rauschen auf ein Bild 
-% dann pca 
+% PCA wird angewandt auf ein Bild, das zur Haelfte verrauscht ist
+% nach Ruecktransformation ist auch die urspruenglich nicht verrauschte Haelfte ein bisschen verrauscht
+% -> Transformationsmatrix, die erstellt wird hat Auswirkungen auf das geamte Bild
 
 %% init
 clear 
