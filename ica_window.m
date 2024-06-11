@@ -1,4 +1,6 @@
-%% ica on small window of image
+% ICA wird auf einem Teil des Bildes angewandt
+% dazu wird dieser Teil als Input fuer die ICA verschieden verrauscht
+% die erhaltene Transformationsmatrix kann auf das gesamte Bild angewandt werden
 
 %% init
 clear 
