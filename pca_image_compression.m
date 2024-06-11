@@ -1,4 +1,7 @@
-%% compress image with PCA
+% PCA wird auf ein Bild angewandt
+% durch Reduktion der Komponenten bei der Ruecktransformation, werden 'unwichtige' Daten weggelassen
+% -> Bild kann auch bei einem gewissen Maß an Datenreduktion noch gut dargestellt werden
+% -> ab einem bestimmten Punkt gibt es Informationsverlust
 
 clear all, clc;
 close all;
