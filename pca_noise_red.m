@@ -1,6 +1,7 @@
-
-% unterschiedliches gaussches rauschen auf ein Bild 
-% dann pca 
+% Inputbild (entweder verrauscht oder nicht)
+% darauf werden unterschiedliche Rauschen angewandt
+% die PCA wird angewandt
+% -> im Ergebnis konnte das Quellrauschen entfernt werden, nicht aber das Sensorrauschen
 
 %% init
 clear 
